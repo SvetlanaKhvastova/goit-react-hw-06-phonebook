@@ -1,7 +1,7 @@
 import types from './todos-types';
 import { v4 as uuidv4 } from 'uuid';
 
-const addContacts = (name, number) => {
+const addContacts = ({ name, number }) => {
   return {
     type: types.ADD,
     payload: {
