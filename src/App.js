@@ -8,22 +8,6 @@ import Contacts from './components/Contacts/Contacts';
 import Filter from './components/Filter/Filter';
 
 class App extends Component {
-  componentDidMount() {
-    const contacts = localStorage.getItem('contacts');
-    const jsonContacts = JSON.parse(contacts);
-    if (jsonContacts) {
-      this.setState({ contacts: [...jsonContacts] });
-    }
-  }
-
-  componentDidUpdate(prevProps, _) {
-    const { contacts } = this.props;
-
-    if (contacts !== prevProps.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
-  }
-
   render() {
     return (
       <div>
